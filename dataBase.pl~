@@ -1,0 +1,12 @@
+:- initialization(loop_entry).
+
+loop_entry:-
+    writeln('1-)Ask relation'),
+    writeln('2-)Add/Delete/Update person'),
+    writeln('3-)Get information of any person'),
+    writeln('4-)print the family tree'),
+    writeln('5-)Control under 18 age marriage'),
+    writeln('6-)Terminate the program'),
+    nl,
+    writeln('Please choose an operation!'),
+
