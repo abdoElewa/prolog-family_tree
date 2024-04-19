@@ -1,52 +1,16 @@
+:-initialization(loop_entry).
 
-
-:- initialization(loop_entry).
-
-loop_entry :-
-    writeln('1-> Add/Delete/Update person'),
+loop_entry:-
+    repeat,
+    writeln('1-> Ask relation'),
+    writeln('2-> Add/Delete/Update person'),
+    writeln('3-> Get information of any person'),
+    writeln('4-> Print the family tree'),
+    writeln('5-> Control under 18 age marriage'),
+    writeln('6-> Determine inheritance'),
+    writeln('7-> Exit'),
     nl,
     writeln('Please choose an operation!'),
-    read(RFUser),
-    (
-        RFUser =:= 1 ->
-        writeln('1-> Add person'),
-        writeln('2-> Delete person'),
-        writeln('3-> Update person'),
-        nl,
-        writeln('Please choose an operation'),
-        read(RFUser1),
-        (
-            RFUser1 =:= 1 ->
-            writeln('1-> Add father'),
-            writeln('2-> Add mother'),
-            writeln('3-> Add son'),
-            writeln('4-> Add daughter'),
-            writeln('5-> Add marriage'),
-            nl,
-            writeln('Please choose an operation'),
-            read(RFUser2),
-            (
-                RFUser2 =:= 1 -> addFather();
-                RFUser2 =:= 2 -> addMother();
-                RFUser2 =:= 3 -> addSon();
-                RFUser2 =:= 4 -> addDaughter();
-                RFUser2 =:= 5 -> addMarriage()
-            )
-        )
-    ),
-    loop_entry.
-
-addFather :-
-    writeln('Adding father...').
-
-addMother :-
-    writeln('Adding mother...').
-
-addSon :-
-    writeln('Adding son...').
-
-addDaughter :-
-    writeln('Adding daughter...').
-
-addMarriage :-
-    writeln('Adding marriage...').
+    read(Buff),
+    processChoice(Buff),
+    Buff=:= 7, !.
